@@ -38,7 +38,7 @@ with open("siege_log.txt", "r") as f:
             continue
             
         def damage_counter(base_dam, status, buffs):
-            sost = 1.5 if status == "Active" else 0.5
+            sost = 1.5 if status.lower() == "active" else 0.5
             result = base_dam * sost * (1 + 0.15 * buffs)
             return round(result, 2)
 
